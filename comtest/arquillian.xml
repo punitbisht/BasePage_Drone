@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<arquillian xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://jboss.org/schema/arquillian"
+            xsi:schemaLocation="http://jboss.org/schema/arquillian http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+    <extension qualifier="cucumber">
+        <property name="report">true</property>
+        <property name="generateDocs">true</property>
+        <property name="report-directory">target/cucumber-report</property>
+        <property name="persistenceEventsActivated">true</property>
+    </extension>
+
+    <extension qualifier="graphene">
+        <!-- URL commented to simplify the process of change the targert environment -->
+        <!--<property name="url">https://awplus-qa-staging.pearsondev.com</property>-->
+        <property name="waitGuiInterval">10</property>
+        <property name="waitAjaxInterval">15</property>
+        <property name="waitModelInterval">10</property>
+        <property name="waitGuardInterval">15</property>
+    </extension>
+
+    <extension qualifier="webdriver">
+        <property name="browser">firefox</property>
+        <!-- All these capabilities are related to Firefox only -->
+        <property name="webdriver.firefox.profile">selenium</property>
+        <!-- TODO parametrize the prefs, download dir -->
+        <!--<property name="firefoxUserPreferences">${awp.firefoxUserPreferences}</property>-->
+        <property name="acceptSslCerts">true</property>
+        <property name="loggingPrefs">driver=WARNING,profiling=INFO</property>
+        <property name="dimensions">1360x768</property>
+        <!--<property name="browser">chrome</property>-->
+        <!--<property name="browser">phantomjs</property>-->
+    </extension>
+
+    <extension qualifier="selenium-server">
+        <property name="browserSessionReuse">true</property>
+    </extension>
+
+    <extension qualifier="drone">
+        <!-- set this to zero if you want to disable timeout -->
+        <property name="instantiationTimeoutInSeconds">120</property>
+    </extension>
+
+</arquillian>
