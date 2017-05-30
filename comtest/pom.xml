@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.pearson.aimswebplus.test</groupId>
-    <artifactId>aimswebplus-automation</artifactId>
+    <groupId>com.comtest.test</groupId>
+    <artifactId>comtest-automation</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -275,27 +275,6 @@
             <version>${phantomjs.version}</version>
             <scope>test</scope>
             <classifier>windows</classifier>
-        </dependency>
-
-
-
-        <dependency>
-            <groupId>com.pearson.aimswebplus</groupId>
-            <artifactId>aimswebplus-rosterclient</artifactId>
-            <version>${aimswebplus.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.pearson.aimswebplus</groupId>
-            <artifactId>aimswebplus-rosterdomain</artifactId>
-            <version>${aimswebplus.version}</version>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.apache.commons</groupId>
-                    <artifactId>commons-lang3</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
     </dependencies>
